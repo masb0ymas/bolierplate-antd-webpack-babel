@@ -10,7 +10,7 @@ class DefaultLayout extends React.Component {
   render() {
     return (
       <div>
-        {/*<Header {...this.props} />*/}
+        {/* <Header {...this.props} /> */}
         <Switch>
           {routes.map((route) => {
             const { component: PageComponent, ...propsRoute } = route

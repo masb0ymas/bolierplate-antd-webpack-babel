@@ -2,7 +2,7 @@ import React from 'react'
 import { PageHeader, Tabs, Button } from 'antd'
 import ReactRouterPropTypes from 'react-router-prop-types'
 import cx from 'classnames'
-import cssHeader from './Header.module.css'
+import cssHeader from './Header.module.scss'
 
 const { TabPane } = Tabs
 
@@ -57,18 +57,16 @@ function Header(props) {
         }}
         title={<div className={cx(cssHeader.rainbowText)}>Nusa Front-End</div>}
         extra={EXTRA_BUTTONS}
-        footer={
+        footer={(
           <Tabs
             activeKey={isNavExist ? curBaseURL : 'random'}
             onChange={(key) => {
               history.push(key)
             }}
           >
-            {TABS.map((tab) => {
-              return <TabPane tab={tab.name} key={tab.url} />
-            })}
+            {TABS.map((tab) => <TabPane tab={tab.name} key={tab.url} />)}
           </Tabs>
-        }
+        )}
       />
     </div>
   )
